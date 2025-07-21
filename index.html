@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📚 Smart Study Scheduler</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <!-- Authentication -->
+  <div id="authContainer">
+    <h2 id="authTitle">Login</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <input type="password" id="confirmPassword" placeholder="Confirm Password" style="display:none;" />
+    <button onclick="handleAuth()">Submit</button>
+    <p onclick="toggleAuth()">Don't have an account? Sign up</p>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dashboard" style="display:none;">
+    <header>
+      <div>
+        <h1>📚 Smart Study Scheduler</h1>
+        <p id="welcomeMessage" class="welcome"></p>
+      </div>
+      <div>
+        <span id="clock"></span>
+        <button onclick="toggleSound()">🔊 <span id="soundStatus">Sound On</span></button>
+        <button onclick="toggleDarkMode()">🌙</button>
+        <button onclick="exportToPDF()">📥 Export PDF</button>
+        <button onclick="logout()">🚪 Logout</button>
+      </div>
+    </header>
+
+    <!-- Motivation -->
+    <section class="card">
+      <h2>💡 Daily Motivation</h2>
+      <p id="quote">Click the button to get inspired!</p>
+      <button onclick="getQuote()">Get Quote</button>
+    </section>
+
+    <!-- Study Timer -->
+    <section class="card">
+      <h2>⏱ Study Timer</h2>
+      <label for="customStudyTime">Study Time (min):</label>
+      <input type="number" id="customStudyTime" placeholder="Enter minutes" min="1" />
+      <button onclick="startCustomStudy()">Start Study Timer</button>
+      <button onclick="resetTimer()">Reset</button>
+      <br />
+      <button onclick="startBreak(5)">Short Break (5 min)</button>
+      <button onclick="startBreak(15)">Long Break (15 min)</button>
+      <p id="timerDisplay">00:00</p>
+      <div id="motivatorBox" class="motivator"></div>
+      <button onclick="replayMotivation()">Replay Motivation</button>
+    </section>
+
+    <!-- Task Manager -->
+    <section class="card">
+      <h2>📋 Task Manager</h2>
+      <input type="text" id="taskInput" placeholder="Enter task" />
+      <select id="priority">
+        <option value="High">🔥 High</option>
+        <option value="Medium">🌟 Medium</option>
+        <option value="Low">🌿 Low</option>
+      </select>
+      <button onclick="addTask()">Add Task</button>
+      <ul id="taskList"></ul>
+    </section>
+
+    <!-- Timetable -->
+    <section class="card">
+      <h2>📅 Weekly Timetable</h2>
+      <div id="timetableInputs">
+        <input type="text" id="day" placeholder="Day (e.g. Monday)" />
+        <input type="text" id="time" placeholder="Time (e.g. 10:00AM)" />
+        <input type="text" id="subject" placeholder="Subject" />
+        <button onclick="addTimetable()">Add</button>
+      </div>
+      <ul id="timetableList"></ul>
+    </section>
+
+    <!-- Subject Progress -->
+<section class="card">
+  <h2>📊 Subject Progress</h2>
+  <input type="text" id="subjectName" placeholder="Subject Name" />
+  <input type="number" id="studyHours" placeholder="Study Hours" />
+  <button onclick="addSubjectProgress()">Add Subject</button>
+  <button onclick="resetSubjectProgress()">Reset Progress</button>
+  <canvas id="studyChart"></canvas>
+</section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

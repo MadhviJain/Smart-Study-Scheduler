@@ -1,0 +1,210 @@
+/* === Reset & Global Styles === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f0f2f5;
+  color: #333;
+  padding: 20px;
+}
+
+/* === Header === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #6a5acd;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+header button {
+  padding: 6px 12px;
+  border: none;
+  background: #fff;
+  color: #6a5acd;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+header button:hover {
+  background: #eaeaff;
+  color: #5848c2;
+}
+
+/* === Cards === */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  margin-bottom: 10px;
+}
+
+/* === Inputs & Buttons === */
+input, select, button {
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+button {
+  background: #6a5acd;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #5848c2;
+}
+
+ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+ul li {
+  background: #f5f5f5;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+}
+
+/* === Study Timer === */
+#timerDisplay {
+  font-size: 2rem;
+  margin: 10px 0;
+  text-align: center;
+}
+
+/* === Motivational Box === */
+.motivator {
+  background: #f0f8ff;
+  border: 2px solid #6a5acd;
+  color: #6a5acd;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.motivator.show {
+  opacity: 1;
+}
+
+/* === Dark Mode === */
+.dark-mode {
+  background: #1e1e1e;
+  color: #eee;
+}
+
+.dark-mode .card {
+  background: #2d2d2d;
+}
+
+.dark-mode input,
+.dark-mode select {
+  background: #444;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+.dark-mode header {
+  background: #333;
+}
+
+.dark-mode header button {
+  background: #555;
+  color: #fff;
+}
+
+/* === Auth Container === */
+#authContainer {
+  max-width: 400px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+#authContainer h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#authContainer p {
+  margin-top: 15px;
+  text-align: center;
+  color: #6a5acd;
+  cursor: pointer;
+}
+
+#authContainer p:hover {
+  text-decoration: underline;
+}
+
+/* === Welcome Message === */
+.welcome {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f9f871;
+  animation: fadeIn 1s ease-in-out;
+  margin-top: 5px;
+}
+
+/* === Live Clock === */
+#clock {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* === Fade-in Animation === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  input, button, select {
+    font-size: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+  }
+}
